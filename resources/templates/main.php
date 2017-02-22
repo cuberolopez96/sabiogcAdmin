@@ -2,6 +2,7 @@
 comprobarPermisos();
 $preguntas = Preguntas::getPreguntas();
 
+
  ?>
 <div class="cards">
 	<?php foreach ($preguntas as $key => $pregunta): ?>

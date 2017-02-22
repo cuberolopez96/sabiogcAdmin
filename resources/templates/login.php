@@ -14,7 +14,8 @@ if (isset($_POST['login'])) {
 		try {
 			$usuario = cleanInput($_POST['user']);
 			$password = cleanInput($_POST['password']);
-			Expertos::Login($usuario,$password);
+			$_SESSION['usuario']=Expertos::Login($usuario,$password);
+			header("location: index.php");
 		} catch (Exception $e) {
 			$errors[]=$e->getMessage();
 		}

@@ -13,7 +13,7 @@ class Preguntas
 	**/
 	public function getPreguntas(){
 		$pdo = ConnectDB::getInstance();
-		$preguntas = $pdo->prepare("SELECT * FROM Preguntas");
+		$preguntas = $pdo->prepare("SELECT * FROM preguntas");
 		$preguntas->execute();
 		return $preguntas->fetchAll();
 	}
@@ -25,7 +25,7 @@ class Preguntas
 	public function findById($id){
 		$pdo=ConnectDB::getInstance();
 		
-		$preguntas=$pdo->prepare("SELECT * FROM Preguntas WHERE id=:id");
+		$preguntas=$pdo->prepare("SELECT * FROM preguntas WHERE id=:id");
 		$preguntas->bindParam(':id',$id);
 		$preguntas->execute();
 		return $preguntas->fetchAll();
